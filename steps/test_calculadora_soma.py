@@ -5,7 +5,7 @@ def step_impl(context, num1, num2):
     context.num1 = num1
     context.num2 = num2
 
-@when('eu somo os dois números inteiros')
+@when('eu somo os dois números inteiro')
 def step_impl(context):
     context.resultado = context.num1 + context.num2
 
