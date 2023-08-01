@@ -17,7 +17,15 @@ jobs:
         python-version: '3.x' # Escolha a versão do Python que deseja usar
 
     - name: Instalar dependências
-      run: pip install behave
+      run: pip install coverage behave
 
     - name: Executar testes com Behave
       run: behave
+
+    - name: Run tests and measure coverage
+      run: coverage run -m behave
+
+    - name: Upload coverage reports to Codecov
+      uses: codecov/codecov-action@v3
+      env:
+        CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
